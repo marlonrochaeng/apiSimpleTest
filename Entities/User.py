@@ -27,3 +27,13 @@ class User:
         _id = str(_id)
         request = requests.put(self.base_uri + self.create_uri + '/' +  _id, data=user)
         return {'code':request.status_code, 'json':request.json()}
+    
+    def update_patch(self, _id, user):
+        _id = str(_id)
+        request = requests.patch(self.base_uri + self.create_uri + '/' +  _id, data=user)
+        return {'code':request.status_code, 'json':request.json()}
+
+    def delete(self, _id):
+        _id = str(_id)
+        return requests.delete(self.base_uri + self.create_uri + '/' +  _id)
+        #return {'code':request.status_code, 'json':request.json()}
